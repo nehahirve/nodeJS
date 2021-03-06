@@ -18,21 +18,21 @@ function requestHandler(req, res) {
   if (url === '/messages' && method === 'POST') {
     const body = []
     req.on('data', chunk => body.push(chunk))
-    req.on('end', () => {
+    return req.on('end', () => {
       const parsedData = Buffer.concat(body).toString().split('=')[1]
-      fs.writeFileSync('message.txt', parsedData)
+      fs.writeFile('message.txt', parsedData, err => {
+        res.writeHead(302, { Location: '/' }) // redirection
+        return res.end()
+      })
     })
-    res.writeHead(302, { Location: '/' }) // redirection
-    return res.end()
-  } else {
-    res.setHeader('Content-Type', 'text/html')
-    res.write('<html>')
-    res.write('<body>')
-    res.write('hello from NodeJS!')
-    res.write('</body>')
-    res.write('</html>')
-    return res.end()
   }
+  res.setHeader('Content-Type', 'text/html')
+  res.write('<html>')
+  res.write('<body>')
+  res.write('hello from NodeJS!')
+  res.write('</body>')
+  res.write('</html>')
+  return res.end()
 }
 
 module.exports = { requestHandler }

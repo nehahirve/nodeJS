@@ -23,3 +23,4 @@ use it to run a server, not just the code that is running on the server but also
 **async code and the event loop**
 
 - incoming request listener is registered and never unregistered
+- use writeFile instead of writeFileSync
