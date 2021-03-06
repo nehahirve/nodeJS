@@ -12,6 +12,14 @@ use it to run a server, not just the code that is running on the server but also
 - req and res is done through HTTPS protocols, with headers and body
 
 **creating a nodejs server**
+
+- http module helps launching and sending requests to other servers (like an api)
+
 **using core modules**
 **working w requests and responses**
+
+- req contains headers / metadata
+
 **async code and the event loop**
+
+- incoming request listener is registered and never unregistered
