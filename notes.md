@@ -24,3 +24,14 @@ use it to run a server, not just the code that is running on the server but also
 
 - incoming request listener is registered and never unregistered
 - use writeFile instead of writeFileSync
+
+EXPRESS JS
+**what is express?**
+
+- framework is a set of helper functions + tools / rules how we work
+- alternatives like adonis.js, koa, sails.js
+
+- using middleware
+- working w req and res
+- routing
+- returnning files
