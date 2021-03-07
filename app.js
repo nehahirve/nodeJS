@@ -1,19 +1,17 @@
-const http = require('http')
-
 const express = require('express')
+
+const adminRoutes = require('./routes/admin')
+const shopRoutes = require('./routes/shop')
 
 const app = express()
 
-app.use((req, res, next) => {
-  console.log('hey i am in the middleware')
-  next() // allows to continue to the next middleware
-})
+app.use(express.urlencoded({ extended: true }))
+
+app.use(adminRoutes)
+app.use(shopRoutes)
 
 app.use((req, res, next) => {
-  console.log('hey i am in another middleware')
-  res.send('<h1>helow from express</h1>')
+  res.status(404).send('page not found')
 })
 
-const server = http.createServer(app)
-
-server.listen(8080)
+app.listen(8080)
