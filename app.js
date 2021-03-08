@@ -7,11 +7,11 @@ const app = express()
 
 app.use(express.urlencoded({ extended: true }))
 
-app.use(adminRoutes)
 app.use(shopRoutes)
+app.use(adminRoutes)
 
-app.use((req, res, next) => {
-  res.status(404).send('page not found')
+app.use('/', (req, res, next) => {
+  res.send('404 not found')
 })
 
 app.listen(8080)
