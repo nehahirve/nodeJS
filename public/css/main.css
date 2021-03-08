@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Mono';
+}
+
+a {
+  text-decoration: none;
+  color: rgb(37, 32, 0);
+}
+
+header {
+  background: rgb(236, 201, 0);
+  color: rgb(37, 32, 0);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+input {
+  border: 3px solid darkblue;
+  margin: 10px;
+  padding: 2px;
+}
+
+button {
+  border: 3px solid darkblue;
+  background: none;
+  border-radius: 0;
+  padding: 2px 5px;
+}
