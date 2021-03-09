@@ -1,3 +1,3 @@
 # nodeJS
 
-practice for coding test, let's go baby
+practice for operation Rylan, let's get outta here baby
